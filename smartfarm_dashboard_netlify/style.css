@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+.header {
+  background: linear-gradient(135deg, #163b2f, #27725a);
+  color: white;
+  padding: 44px 24px;
+}
+
+.header > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+.subtitle {
+  max-width: 780px;
+  margin: 14px 0 0;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.container {
+  width: min(1200px, calc(100% - 32px));
+  margin: 28px auto;
+}
+
+.panel,
+.chart-card,
+.metric-card {
+  background: white;
+  border: 1px solid #e1e8f0;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(21, 35, 58, 0.06);
+}
+
+.panel {
+  padding: 22px;
+  margin-bottom: 22px;
+}
+
+.upload-panel {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.upload-panel p,
+.topic-card p,
+.footer p {
+  color: #5e6b7e;
+  line-height: 1.55;
+}
+
+input[type="file"],
+select,
+button {
+  border: 1px solid #cad5e3;
+  border-radius: 12px;
+  padding: 11px 12px;
+  font-size: 15px;
+  background: white;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: #1f7a5b;
+  color: white;
+  font-weight: 700;
+}
+
+button:hover {
+  background: #176348;
+}
+
+.filters {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.filters label {
+  display: grid;
+  gap: 6px;
+  min-width: 200px;
+  font-weight: 700;
+}
+
+.summary-grid,
+.dashboard-grid,
+.topic-grid,
+.two-col {
+  display: grid;
+  gap: 18px;
+}
+
+.summary-grid {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 22px;
+}
+
+.metric-card {
+  padding: 20px;
+}
+
+.metric-card span {
+  color: #657386;
+  font-size: 14px;
+}
+
+.metric-card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.two-col {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.topic-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.topic-card {
+  border: 1px solid #dce5ef;
+  border-radius: 14px;
+  padding: 16px;
+  background: #f9fbfd;
+}
+
+.dashboard-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.chart-card {
+  padding: 20px;
+  min-height: 380px;
+}
+
+.chart-card canvas {
+  width: 100%;
+  height: 300px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th,
+td {
+  border-bottom: 1px solid #e8eef5;
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: #f2f6fa;
+  color: #26364d;
+}
+
+.frequency-block {
+  margin-bottom: 18px;
+}
+
+.frequency-block h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.frequency-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #d8e2ec;
+  padding: 7px 0;
+  gap: 12px;
+}
+
+.footer {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto 36px;
+  color: #66758a;
+}
+
+@media (max-width: 960px) {
+  .summary-grid,
+  .dashboard-grid,
+  .topic-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-panel {
+    align-items: stretch;
+  }
+
+  input[type="file"],
+  button {
+    width: 100%;
+  }
+}
+
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+  gap:20px;
+}
+
+.chart-card{
+  height:360px;
+  padding:18px;
+  border-radius:18px;
+  background:#fff;
+}
+
+.chart-card h3{
+  margin:0 0 10px;
+  font-size:16px;
+  color:#24435b;
+}
+
+.chart-card canvas{
+  width:100%!important;
+  height:280px!important;
+}
+
+@media (max-width:768px){
+ .chart-card{height:320px;}
+ .chart-card canvas{height:240px!important;}
+}
+
+
+/* ===== Chart size polish v3 ===== */
+.dashboard-grid {
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.chart-card {
+  height: 360px;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.chart-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #24435b;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  height: 280px !important;
+  max-height: 280px !important;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    height: 320px;
+  }
+
+  .chart-card canvas {
+    height: 240px !important;
+    max-height: 240px !important;
+  }
+}
